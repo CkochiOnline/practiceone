@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hei og velkommen!</title>
+    <style>
+        div.color1 {
+            background-color: rgb(116, 116, 241);
+        }
+
+        div.color2 {
+            background-color: rgb(125, 192, 207);
+        }
+
+        div.color3 {
+            background-color: rgb(99, 166, 208);
+        }
+
+        div.card {
+            background-color: rgba(243, 130, 102, 0.908);
+            width: 250px;
+            margin: 20px;
+            text-align: center;
+            font-size: 150%;
+        }
+
+        div.header {
+            text-align: center;
+            padding: 10px;
+        }
+
+        div.text1 {
+            background-color: blanchedalmond;
+            margin: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <br />
+
+    <div class="text1">
+        <div class="innerText1">
+            <h3>Hei mitt navn er Christoffer!</h3>
+
+            <div>
+                Her skal jeg lære litt om HTML, CSS og JavaScript.
+            </div>
+
+            <div>
+                <ul>
+                    <li>Til dette bruker jeg VS Code, som jeg kan skrive kodene med.</li>
+                    <li>VS Code står for Visual Studio Code.</li>
+                    <li>Her er link til
+                        <a href="https://code.visualstudio.com/">
+                            VS Code</a>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <div>
+        <div class="card">
+            <div class="header color1" onclick="helloOne()">Trykk her, så ser dere hilsen èn</div>
+            <div id="minTag1"></div>
+        </div>
+
+        <div class="card">
+            <div class="header color2" onclick="helloTwo()">Trykk her, så ser dere hilsen to</div>
+            <div id="minTag2"></div>
+        </div>
+
+        <div class="card">
+            <div class="header color3" onclick="blankAll()">Trykk her for reset</div>
+        </div>
+    </div>
+
+    <br />
+
+    <h3>Tell opp og ned</h3>
+
+    <div style="display: flex;">
+        <button onclick="minus()">◀</button>
+        <div style="width: 40px; text-align: center;" id="count1">0</div>
+        <button onclick="pluss()">▶</button>
+    </div>
+
+    <br />
+
+    <div>
+        <button style="display: flex; font-size: 150%; text-align: center;" onclick="resetAll()">
+            Reset
+        </button>
+    </div>
+
+    <script>
+        var count = 0;
+        var output = document.getElementById('count1');
+
+        function minus() {
+            count = count - 1;
+            output.innerHTML = count;
+        }
+
+        function pluss() {
+            count = count + 1;
+            output.innerHTML = count;
+        }
+
+        function resetAll() {
+            count = 0;
+            output.innerHTML = count;
+        }
+
+        function helloOne() {
+            document.getElementById('minTag1').innerHTML = /*HTML*/`
+            Hei på deg!
+            `;
+        }
+        function helloTwo() {
+            document.getElementById('minTag2').innerHTML = /*HTML*/`
+            Hei igjen!
+            `;
+        }
+        function blankAll() {
+            document.getElementById('minTag1').innerHTML = '';
+            document.getElementById('minTag2').innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
+
